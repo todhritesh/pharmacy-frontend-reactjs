@@ -2,7 +2,7 @@ import axios from "axios";
 import { useContext } from "react";
 import { TokenContext } from "../context/context";
 
-axios.defaults.baseURL = "http://localhost:8000/api"
+axios.defaults.baseURL = "https://pharmacy-backend-laravel.herokuapp.com"
 axios.defaults.headers.common['Accept'] = "application/json"
 
 // with token
