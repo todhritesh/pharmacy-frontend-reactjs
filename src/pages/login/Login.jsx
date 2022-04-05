@@ -93,7 +93,7 @@ function Login() {
                 navigate('/staff/dashboard');
             }
         }catch(err){
-            console.log(err);
+            console.log(err?.response.data);
         }
     }
 
