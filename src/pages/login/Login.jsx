@@ -74,7 +74,6 @@ function Login() {
             const res = await Axios.post("/login",{
                 email , password
             })
-            console.log(res.data);
             const {access_token , role } = res.data;
             window.sessionStorage.setItem("token",access_token);
             window.sessionStorage.setItem("role",role);
@@ -93,7 +92,7 @@ function Login() {
                 navigate('/staff/dashboard');
             }
         }catch(err){
-            console.log(err?.response.data);
+            toast.error("Something went wrong !")
         }
     }
 
