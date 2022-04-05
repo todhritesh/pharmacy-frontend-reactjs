@@ -101,14 +101,14 @@ function TotalStock() {
     return (
         <Grid container >
             <Grid xs={12} item>
-                <Stack sx={{ my: 2 }} spacing={{xs:2}} direction={{ sm: "row", xs: 'column' }} alignItems="center" justifyContent="space-between">
+                <Stack sx={{ my: 2 }} spacing={{xs:2}} direction={{ md: "row", sm: 'column' }} alignItems="center" justifyContent="space-between">
                     <Box>
                         <Typography variant='h3' component="span" >Manage Stock | 
                             <Typography variant='h4' component={'span'}>{` ${dataStatus}`}</Typography>
                         </Typography>
-                    </Box>
                     <Box>
-                        <Button sx={{ whiteSpace: "nowrap" }} onClick={() => setOpenStockDialog(true)} endIcon={<AddIcon />} variant="contained" color="secondary" >Add Staff</Button>
+                        <Button sx={{ whiteSpace: "nowrap" }} onClick={() => setOpenStockDialog(true)} endIcon={<AddIcon />} variant="contained" color="secondary" >Add Stock</Button>
+                    </Box>
                     </Box>
                 </Stack>
                 <Stack sx={{ my: 2 }} spacing={{sm:2}} direction={{ md: "row", sm: 'column' }} alignItems="center" >
