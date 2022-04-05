@@ -4,7 +4,7 @@ import { TokenContext } from "../context/context";
 
 axios.defaults.baseURL = "https://pharmacy-backend-laravel.herokuapp.com/api"
 axios.defaults.headers.common['Accept'] = "application/json"
-// axios.defaults.headers.common['Access-Control-Allow-Origin'] = "*"
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = "*"
 console.log(axios())
 // with token
 function useAuthAxios(){
