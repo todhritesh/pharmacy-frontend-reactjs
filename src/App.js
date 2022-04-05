@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import Layout from './pages/Layout'
+import { TokenContext } from './context/context'
+import 'react-toastify/dist/ReactToastify.css';
+import {ToastContainer} from 'react-toastify'
+
+
 
 function App() {
+  const [token, setToken] = useState({token:'',role:''})
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+    <TokenContext.Provider value={{ token, setToken }}>
+      <Layout/>
+    </TokenContext.Provider>
+    <ToastContainer  toastStyle={{ fontSize:"18px",fontWeight:'bold' }} />
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
