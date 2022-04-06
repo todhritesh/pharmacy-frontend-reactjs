@@ -41,8 +41,8 @@ function TotalStock() {
 
     async function getData() {
         try {
-            const res = await authAxios('/pharmacist/manage-stocks/get_expired_or_sellable_stocks/');
             // const res = await authAxios('/pharmacist/manage-stocks/');
+            const res = await authAxios('/pharmacist/manage-stocks/get_expired_or_sellable_stocks/');
             console.log('first')
             const data = res.data.stocks
             console.log(data)
