@@ -41,19 +41,23 @@ function TotalStock() {
 
     async function getData() {
         try {
-            const res = await authAxios('/pharmacist/manage-stocks/');
+            const res = await authAxios('/pharmacist/manage-stocks/get_expired_or_sellable_stocks/');
+            // const res = await authAxios('/pharmacist/manage-stocks/');
+            console.log('first')
             const data = res.data.stocks
+            console.log(data)
             setTempData(data)
             setStockData(data);
             setIsLoading(false)
         } catch (err) {
+            console.log(err?.response?.data)
             if (err?.response?.data?.message === 'Unauthenticated.') {
                 toast.error("You are unauthenticated , please login")
                 navigate("/")
             }
         }
     }
-    // console.log(stockData)
+
     useEffect(() => {
         const sessionToken = sessionStorage.getItem('token');
         const sessionRole = sessionStorage.getItem('role');

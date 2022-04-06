@@ -6,7 +6,7 @@ axios.defaults.baseURL = "https://pharmacy-backend-laravel.herokuapp.com/api"
 // axios.defaults.baseURL = "http://localhost:8000/api"
 axios.defaults.headers.common['Accept'] = "application/json"
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = "*"
-console.log(axios())
+
 // with token
 function useAuthAxios(){
     const {token} = useContext(TokenContext);
